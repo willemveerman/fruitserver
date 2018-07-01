@@ -1,24 +1,24 @@
 package main
 
 import (
-	"net/http"
 	"fmt"
 	"log"
-	"os"
 	"math/rand"
+	"net/http"
+	"os"
 	"time"
 )
 
 var fruit = []string{"apple",
-					 "pear",
-					 "banana",
-					 "plum",
-					 "nectarine",
-					 "orange",
-					 "kiwi",
-					 "apricot",
-					 "blueberry",
-					 "peach"}
+	"pear",
+	"banana",
+	"plum",
+	"nectarine",
+	"orange",
+	"kiwi",
+	"apricot",
+	"blueberry",
+	"peach"}
 
 var targetServer = os.Getenv("TARGET_FRUITSERVER")
 
@@ -29,12 +29,12 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Println(requestFruit, " - ", r.Host, " - ", r.RemoteAddr)
 
-	queryString := "http://"+targetServer+".default:"+targetPort+"/"+requestFruit
+	queryString := "http://" + targetServer + ".default:" + targetPort + "/" + requestFruit
 
 	fmt.Println(queryString)
 
 	go func() {
-		time.Sleep(2 * time.Second)
+		time.Sleep(1 * time.Second)
 
 		resp, err := http.Get(queryString)
 
