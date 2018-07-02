@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fs2
+  labels:
+    app: fs2
+spec:
+  containers:
+  - name: fs2
+    image: willemveerman/fruitserver:fs2
+  imagePullSecrets:
+  - name: regcred
