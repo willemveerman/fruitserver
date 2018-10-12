@@ -50,7 +50,7 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	fmt.Println("Starting Server - "+time.Now().Format(time.RFC850))
+	fmt.Println("Starting FRUITSERVER - "+time.Now().Format(time.RFC850))
 
 	sourcePort := os.Getenv("FRUITPORT")
 
